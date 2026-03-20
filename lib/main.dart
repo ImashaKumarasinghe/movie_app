@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/screeens/home.dart';
 
 void main() {
   runApp(const MovieApp());
 }
 
 class MovieApp extends StatelessWidget {
-  const MovieApp();
+  const MovieApp({super.key});
   
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,7 @@ class MovieApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.white),
         )),
-      home: const Center(
-        child: Text('Movie App')),
+      home: const HomeScreen(),
     );
   }
 }
