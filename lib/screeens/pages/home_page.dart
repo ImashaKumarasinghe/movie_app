@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/services/movie_services.dart';
 class HomePage extends StatefulWidget {
     
     
@@ -25,6 +26,20 @@ class HomePage extends StatefulWidget {
     }
 
 class HomePageState extends State<HomePage> {
+
+
+@override
+    void initState() {
+        super.initState();
+        printData();
+    }
+
+    Future<void> printData() async {
+        MovieServices movieServices = MovieServices();
+        final data = await movieServices.popularMovies();
+        print(data.toString());
+    }
+
     @override
     Widget build(BuildContext context) {
         return SingleChildScrollView(
