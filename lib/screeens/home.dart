@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/screeens/pages/home_page.dart';
 
 class HomeScreen extends StatefulWidget {
     const HomeScreen({super.key});
@@ -10,6 +11,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
     final PageController _pageController = PageController(initialPage: 0);
     int _selectedIndex = 0;
+
+    Widget SearchBar() {
+        return Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: TextField(
+                decoration: InputDecoration(
+                    hintText: 'Search movies...',
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[800],
+                ),
+            ),
+        );
+    }
+
 
     @override
     void dispose() {
@@ -30,9 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         _selectedIndex = index;
                     });
                 },
-                children: const [
+                children: [
                     Center(
-                        child: Text('Welcome to Movie App 1!'),
+                        child: HomePage(),
                     ),
                     Center(
                         child: Text('Welcome to Movie App 2!'),
