@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/screens/home.dart';
+import 'package:movie_app/screeens/home.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -9,15 +9,20 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
       );
     });
 
     return Scaffold(
       body: Center(
-        child: Image.asset(
-          'assets/splash.png',
-          height: 300,
+        child: Text(
+          'Movie App',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
